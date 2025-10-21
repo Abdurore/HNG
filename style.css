@@ -5,10 +5,10 @@
 }
 
 body {
-    font-family: monospace;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: rgb(236,243,158);
     color: rgb(19,42,19);
-    line-height: 1.7;
+    line-height: 1.6;
     padding: 2rem;
     min-height: 100vh;
 }
@@ -18,7 +18,7 @@ main {
     margin: 0 auto;
 }
 
-
+/* Profile Card Base Styles */
 .profile-card {
     background: rgb(144,169,85);
     border-radius: 16px;
@@ -31,12 +31,10 @@ main {
     margin: 0 auto;
 }
 
-
+/* Avatar Styles */
 .profile-avatar-section {
     position:relative;
     margin: 0;
-    padding-left: 1.5rem;
-    padding-top: 1.5rem;
 }
 
 .profile-avatar {
@@ -46,7 +44,7 @@ main {
     display: block;
 }
 
-
+/* Content Styles */
 .profile-content {
     padding: 2rem;
 }
@@ -64,6 +62,7 @@ main {
 }
 
 .profile-time {
+    font-family: 'Courier New', monospace;
     font-size: 0.875rem;
     color: rgb(19,42,19);
     background: rgb(79,119,45);
@@ -74,12 +73,12 @@ main {
 
 .profile-bio {
     margin-bottom: 2rem;
-    color: rgb(19,42 ,19);
+    color: rgb(19,42,19);
     font-size: 1rem;
     text-align: justify;
 }
 
-
+/* Social Links */
 .social-links {
     margin-bottom: 2rem;
 }
@@ -98,7 +97,7 @@ main {
     background: rgb(49,87,44);
     color: rgb(144,169,85);
     text-decoration: none;
-    border-radius: 7px;
+    border-radius: 8px;
     font-weight: 500;
     transition: all 0.2s ease;
     border: 2px solid transparent;
@@ -109,14 +108,15 @@ main {
     background: rgb(236,243,158);
     transform: translateY(-1px);
     outline: none;
-    box-shadow: 0 4px 12px black;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
 }
 
 .social-link:focus-visible {
-    outline: 2px solid white;
+    outline: 2px solid #fbbf24;
     outline-offset: 2px;
 }
 
+/* Lists */
 .hobbies-section,
 .dislikes-section {
     margin-bottom: 1.5rem;
@@ -157,10 +157,7 @@ main {
     color: rgb(0, 0, 0);
 }
 
-
-
-
-
+/* Responsive Design */
 @media (min-width: 768px) {
     .profile-card {
         grid-template-columns: 250px 1fr;
@@ -213,5 +210,28 @@ main {
     }
 }
 
+/* Focus styles for accessibility */
+.social-link:focus-visible {
+    outline: 2px solid #fbbf24;
+    outline-offset: 2px;
+}
 
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .profile-card {
+        border: 2px solid #000;
+    }
+    
+    .social-link {
+        border: 2px solid #000;
+    }
+}
 
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
